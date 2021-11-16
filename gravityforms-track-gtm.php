@@ -57,7 +57,7 @@ add_filter(
 				);
 
 				</script>",
-				'formSubmission', // event.
+				'GFormSubmission', // event.
 				$form['id'], // formID.
 				$form['title'] // formName.
 			);
