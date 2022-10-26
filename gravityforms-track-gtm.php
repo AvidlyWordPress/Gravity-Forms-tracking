@@ -42,7 +42,7 @@ add_filter(
 	'gform_confirmation',
 	function( $confirmation, $form, $entry, $ajax ) {
 
-		if ( $ajax ) {
+		if ( $ajax && is_string( $confirmation ) ) {
 			// Modify dataLayer for Ajax forms.
 			$form_submission = sprintf(
 				"<script>
@@ -61,13 +61,16 @@ add_filter(
 				$form['id'], // formID.
 				$form['title'] // formName.
 			);
+
+			$confirmation .= $form_submission;
+			return $confirmation;
+
 		} else {
-			$form_submission = "<script>console.log( 'Note: Form does not use AJAX and data could not be send to Google Tag Manager!' );</script>";
+
+			//if redirect/thank you page is configured we just want $confirmation because it becomes an array
+			return $confirmation;
+			
 		}
-
-		$confirmation .= $form_submission;
-
-		return $confirmation;
 	},
 	10,
 	4
