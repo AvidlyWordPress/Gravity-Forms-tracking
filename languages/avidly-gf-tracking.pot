@@ -1,0 +1,36 @@
+# Copyright (C) 2023 Avidly
+# This file is distributed under the GNU General Public License v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Gravity Forms tracking by Avidly 1.1.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/avidly-gf-tracking\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2023-10-23T08:10:32+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.7.1\n"
+"X-Domain: avidly-gf-tracking\n"
+
+#. Plugin Name of the plugin
+msgid "Gravity Forms tracking by Avidly"
+msgstr ""
+
+#. Description of the plugin
+msgid "Force GF forms to use AJAX and pass data to Google Tag Manager for tracking."
+msgstr ""
+
+#. Author of the plugin
+msgid "Avidly"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "http://avidly.fi"
+msgstr ""
+
+#: gravityforms-track-gtm.php:60
+msgctxt "redirect confirmation"
+msgid "Redirecting..."
+msgstr ""
