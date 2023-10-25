@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Gravity Forms tracking by Avidly
  * Description: Force GF forms to use AJAX and pass data to Google Tag Manager for tracking.
- * Version: 1.1.0
+ * Version: 1.1.1
  * Author: Avidly
  * Author URI: http://avidly.fi
  * License: GNU General Public License v2 or later
