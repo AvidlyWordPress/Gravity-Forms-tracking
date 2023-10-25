@@ -3,7 +3,7 @@ Force GF forms to use AJAX and pass data to Google Tag Manager for tracking.
 
 ## How it works
 1. Manipulate AJAX value for $form_args with 'gform_form_args' filter.
-2. Add GTML traching script to AJAX forms $confirmation 'gform_confirmation'.
+2. Run dataLayer push script on AJAX forms $confirmation 'gform_confirmation'. Detects text and redirect based confirmations.
 
 ## Usage
 Download the plugin and activate it.
