@@ -69,7 +69,6 @@ function avidly_gmt_track_gform_confirmation( $confirmation, $form, $entry, $aja
 	return $confirmation;
 }
 
-
 /**
  * Set inline script for confimation message.
  *
@@ -78,19 +77,29 @@ function avidly_gmt_track_gform_confirmation( $confirmation, $form, $entry, $aja
  * @return void
  */
 function avidly_gmt_track_gform_inline_script_tag( $form, $redirect = false ) {
+
 	return GFCommon::get_inline_script_tag( 
 		sprintf(
-			"window.top.jQuery(document).on( 'gform_confirmation_loaded', function ( event, formID, formName ) {
+			"
+			window.top.jQuery(document).on( 'gform_confirmation_loaded', function ( event, formID, formName ) {
+				// Check if the flag is already set to prevent multiple executions
+				if (window.top.popupConfirmationLoaded) {
+					// console.log( 'skipping' );
+				} else {
+					// Set the flag to true to prevent further executions
+					window.top.popupConfirmationLoaded = true;
+
 					window.dataLayer = window.dataLayer || [];
 					window.dataLayer.push({
 						event    : '%s',
 						formID   : '%s',
 						formName : '%s',
 						eventCallback: (id) =>  { %s },
-    					eventTimeout: 2000,
+    					eventTimeout: 500,
 					});
 				}
-			);",
+			});
+			",
 			'GFormSubmission', // event.
 			(int) $form['id'], // formID.
 			esc_html( $form['title'] ), // formName.
